@@ -1,0 +1,39 @@
+type Employee {
+  _id: String
+  firstName: String
+  lastName: String
+  age: Int
+  dateOfJoining: String
+  title: String
+  department: String
+  employeeType: String
+  currentStatus: Boolean
+  retirementDate: String
+  monthsTillRetirement: Int
+}
+
+
+type Query {
+  employeeList: [Employee]
+  employeeDetail(_id: String): Employee
+}
+
+
+input EmployeeInputs {
+  _id: String
+  firstName: String
+  lastName: String
+  age: Int
+  dateOfJoining: String
+  title: String
+  department: String
+  employeeType: String
+  currentStatus: Boolean
+}
+
+
+type Mutation {
+  employeeAdd(employee: EmployeeInputs): Employee
+  employeeEdit(employee: EmployeeInputs): Employee
+  employeeDelete(employee: EmployeeInputs): Employee
+}
